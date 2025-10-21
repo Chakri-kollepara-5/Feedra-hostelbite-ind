@@ -12,6 +12,8 @@ import AnalyticsPage from './pages/AnalyticsPage';
 import CommunityPage from './pages/CommunityPage';
 import SettingsPage from './pages/SettingsPage';
 import HostelBitePage from './pages/HostelBitePage';
+import PaymentsPage from './pages/PaymentsPage';
+
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, loading } = useAuth();
@@ -108,6 +110,10 @@ function AppContent() {
         {/* Catch all route */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      <Routes>
+  {/* ...other routes */}
+  <Route path="/payments" element={<PaymentsPage />} />
+</Routes>
       
       <Toaster 
         position="top-right"
